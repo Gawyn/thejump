@@ -1,0 +1,53 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    ==javascript_include_tag 'all'
+    ==stylesheet_link_tag 'site.css'
+    title The Jump
+  body 
+    #container
+      #header
+        == image_tag "wtf_header_eng.png"
+        map name="home"
+          area shape="rect" coords="0, 35, 960, 192" href="index.html"
+        #right_header
+          #fbicon.right
+            == link_to image_tag("facebook-logo.png"), "http://facebook.com/WTFdocumental", :class => "fbicon"
+          #languages.right
+            == link_to "Català", "../ca/the_documentary.html"
+            '  |
+            == link_to "Español", "../es/the_documentary.html"
+            '  |
+            == link_to "English", "../en/the_documentary.html"
+            '  |
+      #menu_container
+      #menu
+        ul
+          li == link_to "THE DOCUMENTARY", 'the_documentary.html'
+          | |
+          li == link_to "THE TEAM", 'the_team.html'
+          | |
+          li == link_to "THE PRODUCERS", 'the_producers.html'
+          | |
+          li == link_to "MEDIA", 'media.html'
+          | |
+          li == link_to "SOCIAL", 'social.html'
+          | |
+          li == link_to "MAKE IT HAPPEN!", "index.html", :class => "special"
+      .separator
+      #content
+        ==yield
+      #footer
+        #titles
+          .left PRODUCED BY
+          .right WITH THE SUPPORT OF
+        #logos
+          .left == link_to image_tag("../images/logo_aved_abajo.png"), "www.aved.es"
+          .left == link_to image_tag("../images/logo_puche.png"), "http://estudipuche.com/"
+          .right == link_to image_tag("../images/ergosum_logo.png"), "http://www.ergosumproductions.com/"
+          .right == link_to image_tag("../images/masimas.png"), "http://www.masimas.com/"
+        .separator
+        span#production AVED PRODUCCIONES
+        span#address
+          |  - Jordi Girona, 1-3, edificio Omega, despacho 206 - 08034 Barcelona - Email: aved@aved.es - Teléfono: 93 413 75 90
